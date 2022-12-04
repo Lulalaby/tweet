@@ -22,7 +22,7 @@ async function run(): Promise<void> {
       mediaIds,
       inReplyToStatusId
     )
-    core.setOutput('response', JSON.stringify(response))
+    core.setOutput('response', `Tweet id ${response.data.id}`)
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }

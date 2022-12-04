@@ -1,10 +1,10 @@
-import Twitter, {TweetV1} from 'twitter-api-v2'
+import Twitter, {TweetV2PostTweetResult} from 'twitter-api-v2'
 
 export async function tweet(
   status: string,
   mediaIds: string[] = [],
   inReplyToStatusId = ''
-): Promise<TweetV1> {
+): Promise<TweetV2PostTweetResult> {
   const appKey = process.env.CONSUMER_API_KEY as string
   const appSecret = process.env.CONSUMER_API_SECRET_KEY as string
   const accessToken = process.env.ACCESS_TOKEN as string
@@ -15,7 +15,7 @@ export async function tweet(
     appSecret,
     accessToken,
     accessSecret
-  }).v1
+  }).v2
 
   const parameters: {[key: string]: string} = {}
   if (mediaIds.length > 0) {

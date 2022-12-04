@@ -99,7 +99,7 @@ function tweet(status, mediaIds = [], inReplyToStatusId = '') {
             appSecret,
             accessToken,
             accessSecret
-        }).v1;
+        }).v2;
         const parameters = {};
         if (mediaIds.length > 0) {
             parameters['media_ids'] = mediaIds.join(',');
